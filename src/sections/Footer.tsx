@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { FlaskConical } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
@@ -83,7 +82,11 @@ export default function Footer() {
         {/* Center Logo */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex items-center gap-3">
-            <FlaskConical className="w-6 h-6 text-red-600" />
+            <img
+              src="/favicon.svg"
+              alt="ONIZUKA logo"
+              className="w-8 h-8"
+            />
             <span className="text-lg font-medium tracking-tight text-white">ONIZUKA</span>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { FlaskConical, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggle from '../components/LanguageToggle';
 
@@ -19,7 +19,11 @@ export default function Navigation({ scrolled }: NavigationProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <FlaskConical className="w-5 h-5 text-red-600 group-hover:text-red-500 transition-colors" />
+            <img
+              src="/favicon.svg"
+              alt="ONIZUKA logo"
+              className="w-5 h-5 group-hover:opacity-90 transition-opacity"
+            />
             <span className="text-sm font-medium tracking-tight text-white">ONIZUKA</span>
           </a>
 
