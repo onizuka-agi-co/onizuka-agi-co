@@ -1,4 +1,4 @@
-import { Network, Cpu, Code2, Eye, Wrench, Cat, Bell, ClipboardList, Briefcase } from 'lucide-react';
+import { Network, Cpu, Code2, Eye, Wrench, Cat, Bell, ClipboardList, Crown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Team() {
@@ -7,6 +7,13 @@ export default function Team() {
   const agents = [
     {
       number: '00',
+      name: t('team.renji'),
+      role: t('team.roleRenji'),
+      description: t('team.memberDescRenji'),
+      icon: Crown,
+    },
+    {
+      number: '01',
       name: t('team.mainSession'),
       model: 'GLM-5',
       role: t('team.roleMainSession'),
@@ -14,7 +21,7 @@ export default function Team() {
       icon: Network,
     },
     {
-      number: '01',
+      number: '02',
       name: t('team.orchestrator'),
       model: 'Codex5.3',
       role: t('team.roleOrchestrator'),
@@ -22,7 +29,7 @@ export default function Team() {
       icon: Cpu,
     },
     {
-      number: '02',
+      number: '03',
       name: t('team.developer'),
       model: 'Codex5.3',
       role: t('team.roleDeveloper'),
@@ -30,7 +37,7 @@ export default function Team() {
       icon: Code2,
     },
     {
-      number: '03',
+      number: '04',
       name: t('team.reviewer'),
       model: 'Codex5.3',
       role: t('team.roleReviewer'),
@@ -38,7 +45,7 @@ export default function Team() {
       icon: Eye,
     },
     {
-      number: '04',
+      number: '05',
       name: t('team.fixer'),
       model: 'Codex5.3',
       role: t('team.roleFixer'),
@@ -46,32 +53,25 @@ export default function Team() {
       icon: Wrench,
     },
     {
-      number: '05',
+      number: '06',
       name: t('team.tuzuri'),
       role: t('team.roleTuzuri'),
       description: t('team.memberDescTuzuri'),
       icon: Cat,
     },
     {
-      number: '06',
+      number: '07',
       name: t('team.notificationManager'),
       role: t('team.roleNotificationManager'),
       description: t('team.memberDescNotificationManager'),
       icon: Bell,
     },
     {
-      number: '07',
+      number: '08',
       name: t('team.akari'),
       role: t('team.roleAkari'),
       description: t('team.memberDescAkari'),
       icon: ClipboardList,
-    },
-    {
-      number: '08',
-      name: t('team.ceoSupport'),
-      role: t('team.roleCeoSupport'),
-      description: t('team.memberDescCeoSupport'),
-      icon: Briefcase,
     },
   ];
 
