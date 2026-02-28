@@ -1,10 +1,11 @@
-import { Cat, ClipboardList, Crown } from 'lucide-react';
+import { Network, Cpu, Code2, Eye, Wrench, Cat, ClipboardList, Crown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Team() {
   const { t } = useLanguage();
 
-  const members = [
+  // Team Members (3 people)
+  const teamMembers = [
     {
       number: '00',
       name: t('team.renji'),
@@ -28,6 +29,50 @@ export default function Team() {
     },
   ];
 
+  // AI Agents (5 agents)
+  const aiAgents = [
+    {
+      number: '03',
+      name: t('team.mainSession'),
+      model: 'GLM-5',
+      role: t('team.roleMainSession'),
+      description: t('team.memberDescMainSession'),
+      icon: Network,
+    },
+    {
+      number: '04',
+      name: t('team.orchestrator'),
+      model: 'Codex5.3',
+      role: t('team.roleOrchestrator'),
+      description: t('team.memberDescOrchestrator'),
+      icon: Cpu,
+    },
+    {
+      number: '05',
+      name: t('team.developer'),
+      model: 'Codex5.3',
+      role: t('team.roleDeveloper'),
+      description: t('team.memberDescDeveloper'),
+      icon: Code2,
+    },
+    {
+      number: '06',
+      name: t('team.reviewer'),
+      model: 'Codex5.3',
+      role: t('team.roleReviewer'),
+      description: t('team.memberDescReviewer'),
+      icon: Eye,
+    },
+    {
+      number: '07',
+      name: t('team.fixer'),
+      model: 'Codex5.3',
+      role: t('team.roleFixer'),
+      description: t('team.memberDescFixer'),
+      icon: Wrench,
+    },
+  ];
+
   return (
     <section id="team" className="relative py-24 lg:py-32 bg-black">
       {/* Vermilion accent line */}
@@ -47,39 +92,87 @@ export default function Team() {
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-red-900/20">
-          {members.map((member) => (
-            <div
-              key={member.number}
-              className="bg-black p-8 hover:bg-red-950/10 transition-colors group border border-red-900/10 hover:border-red-500/30"
-            >
-              {/* Icon */}
-              <div className="mb-6">
-                <member.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+        {/* Team Members Section */}
+        <div className="mb-16">
+          <h3 className="text-xl font-medium text-white/80 mb-6">{t('team.membersLabel')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-red-900/20">
+            {teamMembers.map((member) => (
+              <div
+                key={member.number}
+                className="bg-black p-8 hover:bg-red-950/10 transition-colors group border border-red-900/10 hover:border-red-500/30"
+              >
+                {/* Icon */}
+                <div className="mb-6">
+                  <member.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+                </div>
+
+                {/* Number */}
+                <span className="text-xs font-mono text-red-600 mb-4 block">
+                  {member.number}
+                </span>
+
+                {/* Name */}
+                <h3 className="text-lg font-medium text-white mb-1 uppercase tracking-wide group-hover:text-red-400 transition-colors">
+                  {member.name}
+                </h3>
+
+                {/* Role */}
+                <p className="text-sm text-red-400/80 leading-relaxed mb-2">
+                  {member.role}
+                </p>
+
+                {/* Description */}
+                <p className="text-sm text-white/40 leading-relaxed">
+                  {member.description}
+                </p>
               </div>
+            ))}
+          </div>
+        </div>
 
-              {/* Number */}
-              <span className="text-xs font-mono text-red-600 mb-4 block">
-                {member.number}
-              </span>
+        {/* AI Agents Section */}
+        <div>
+          <h3 className="text-xl font-medium text-white/80 mb-6">{t('team.agentsLabel')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-red-900/20">
+            {aiAgents.map((agent) => (
+              <div
+                key={agent.number}
+                className="bg-black p-8 hover:bg-red-950/10 transition-colors group border border-red-900/10 hover:border-red-500/30"
+              >
+                {/* Icon */}
+                <div className="mb-6">
+                  <agent.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+                </div>
 
-              {/* Name */}
-              <h3 className="text-lg font-medium text-white mb-1 uppercase tracking-wide group-hover:text-red-400 transition-colors">
-                {member.name}
-              </h3>
+                {/* Number */}
+                <span className="text-xs font-mono text-red-600 mb-4 block">
+                  {agent.number}
+                </span>
 
-              {/* Role */}
-              <p className="text-sm text-red-400/80 leading-relaxed mb-2">
-                {member.role}
-              </p>
+                {/* Name */}
+                <h3 className="text-lg font-medium text-white mb-1 uppercase tracking-wide group-hover:text-red-400 transition-colors">
+                  {agent.name}
+                </h3>
 
-              {/* Description */}
-              <p className="text-sm text-white/40 leading-relaxed">
-                {member.description}
-              </p>
-            </div>
-          ))}
+                {/* Model */}
+                {agent.model && (
+                  <p className="text-xs font-mono text-white/30 mb-4">
+                    {agent.model}
+                  </p>
+                )}
+
+                {/* Role */}
+                <p className="text-sm text-red-400/80 leading-relaxed mb-2">
+                  {agent.role}
+                </p>
+
+                {/* Description */}
+                <p className="text-sm text-white/40 leading-relaxed">
+                  {agent.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Mission Statement */}

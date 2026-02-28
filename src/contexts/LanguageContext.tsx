@@ -44,6 +44,8 @@ const translations = {
 
     // Team
     'team.label': 'チーム',
+    'team.membersLabel': 'チームメンバー',
+    'team.agentsLabel': 'AIエージェント',
     'team.title': 'チームメンバー',
     'team.headingLine1': 'Team',
     'team.headingHighlight': 'Members',
@@ -222,6 +224,8 @@ const translations = {
 
     // Team
     'team.label': 'Team',
+    'team.membersLabel': 'Team Members',
+    'team.agentsLabel': 'AI Agents',
     'team.title': 'Team Members',
     'team.headingLine1': 'Team',
     'team.headingHighlight': 'Members',
