@@ -11,22 +11,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #ffffff;
-        --surface: #ffffff;
-        --surface-soft: #fafafa;
-        --text: #1a1a1a;
-        --text-soft: #4a4a4a;
-        --muted: #777777;
-        --line: #e7e7e7;
-        --accent: #c41e3a;
-        --shadow: 0 10px 30px rgba(20, 20, 20, 0.04);
-        --radius-lg: 18px;
-        --radius-md: 14px;
+        --bg: #0a0a0a;
+        --surface: #101010;
+        --surface-soft: #151515;
+        --text: #ffffff;
+        --text-soft: rgba(255, 255, 255, 0.7);
+        --accent: #3b82f6;
+        --border: rgba(255, 255, 255, 0.1);
+        --hero-a: #0a2463;
+        --hero-b: #1e3a8a;
+        --radius: 12px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        --max-width: 1440px;
+        --pad-x: 40px;
       }
 
       * {
@@ -40,120 +42,195 @@
       }
 
       body {
-        font-family: "Manrope", "Inter", "Segoe UI", sans-serif;
+        font-family: "Inter", "Segoe UI", sans-serif;
         background: var(--bg);
         color: var(--text);
-        line-height: 1.75;
-        letter-spacing: 0.01em;
+        line-height: 1.7;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
       }
 
-      .layout {
-        width: min(1120px, 92vw);
+      .container {
+        width: min(var(--max-width), 100% - 2 * var(--pad-x));
         margin: 0 auto;
-        padding: clamp(44px, 8vw, 98px) 0 clamp(52px, 10vw, 120px);
+      }
+
+      .section {
+        padding: clamp(88px, 10vw, 132px) 0;
       }
 
       .hero {
-        border: 1px solid var(--line);
-        border-radius: var(--radius-lg);
-        padding: clamp(36px, 6vw, 72px);
-        background: linear-gradient(180deg, #ffffff 0%, #fefefe 100%);
-        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 38%),
+          linear-gradient(135deg, var(--hero-a), var(--hero-b));
+        border-bottom: 1px solid var(--border);
       }
 
-      .badge {
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: auto 0 -18% 0;
+        height: 42%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='220' viewBox='0 0 1200 220' fill='none'%3E%3Cpath d='M0 132C100 162 200 192 300 192C400 192 500 162 600 154C700 146 800 162 900 184C1000 206 1100 220 1200 205' stroke='rgba(255,255,255,0.2)' stroke-width='2'/%3E%3Cpath d='M0 168C120 198 240 220 360 210C480 200 600 158 720 150C840 142 960 172 1080 190C1140 199 1170 204 1200 206' stroke='rgba(255,255,255,0.15)' stroke-width='2'/%3E%3C/svg%3E");
+        background-size: cover;
+        opacity: 0.75;
+        pointer-events: none;
+        animation: drift 16s linear infinite;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: clamp(18px, 2vw, 26px);
+      }
+
+      .hero-content {
+        grid-column: 1 / span 9;
+        position: relative;
+        z-index: 1;
+      }
+
+      .status {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        border: 1px solid rgba(196, 30, 58, 0.3);
-        color: var(--accent);
-        background: rgba(196, 30, 58, 0.04);
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
         border-radius: 999px;
-        padding: 8px 14px;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
+        padding: 7px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
+        backdrop-filter: blur(4px);
       }
 
-      .badge::before {
+      .status::before {
         content: "";
-        width: 6px;
-        height: 6px;
-        border-radius: 999px;
-        background: var(--accent);
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #93c5fd;
+        box-shadow: 0 0 12px rgba(147, 197, 253, 0.65);
       }
 
       h1 {
-        margin: 26px 0 0;
-        font-size: clamp(2.2rem, 6.6vw, 5rem);
-        line-height: 1.03;
-        font-weight: 800;
-        letter-spacing: -0.02em;
+        margin: 20px 0 0;
+        font-size: clamp(2.1rem, 5.1vw, 48px);
+        line-height: 1.08;
+        letter-spacing: -0.5px;
+        font-weight: 700;
       }
 
-      .label {
+      .subheadline {
         margin: 12px 0 0;
-        color: var(--text-soft);
-        font-size: clamp(1rem, 1.8vw, 1.2rem);
-        font-weight: 500;
+        font-size: clamp(1.02rem, 1.8vw, 1.32rem);
+        color: rgba(255, 255, 255, 0.86);
       }
 
       .tagline {
-        margin: clamp(22px, 4vw, 34px) 0 0;
-        max-width: 860px;
+        margin: clamp(20px, 3vw, 30px) 0 0;
+        max-width: 850px;
+        font-size: clamp(1rem, 1.6vw, 1.16rem);
         color: var(--text-soft);
-        font-size: clamp(1.05rem, 2.2vw, 1.3rem);
       }
 
-      .divider {
-        margin: clamp(30px, 5vw, 48px) 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent 0%, #e4e4e4 20%, rgba(196, 30, 58, 0.34) 50%, #e4e4e4 80%, transparent 100%);
+      .cta-row {
+        margin-top: clamp(28px, 4vw, 42px);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
-      .grid {
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 20px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease,
+          color 180ms ease;
+        will-change: transform;
+      }
+
+      .btn-primary {
+        background: #ffffff;
+        color: #1d4ed8;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.02);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.34);
+      }
+
+      .btn:hover {
+        transform: scale(1.03);
+      }
+
+      .content-grid {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: clamp(14px, 2vw, 20px);
+        gap: clamp(20px, 2vw, 28px);
       }
 
       .card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius-md);
-        background: var(--surface);
-        padding: clamp(18px, 2.6vw, 30px);
-        box-shadow: 0 4px 16px rgba(24, 24, 24, 0.03);
-        transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(22px, 2.2vw, 30px);
+        box-shadow: var(--shadow);
+        transition: transform 180ms ease, border-color 180ms ease;
+        will-change: transform;
       }
 
       .card:hover {
-        border-color: #d8d8d8;
-        box-shadow: 0 14px 28px rgba(24, 24, 24, 0.06);
-        transform: translateY(-2px);
+        transform: scale(1.015);
+        border-color: rgba(59, 130, 246, 0.5);
       }
 
-      .card h2 {
-        margin: 0 0 12px;
-        font-size: clamp(1.18rem, 1.9vw, 1.55rem);
-        line-height: 1.3;
+      h2 {
+        margin: 0 0 14px;
+        font-size: clamp(1.8rem, 3vw, 36px);
+        line-height: 1.2;
         font-weight: 700;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.02em;
       }
 
-      .mission {
+      .mission-wrap {
+        grid-column: 1 / -1;
+      }
+
+      .mission-copy {
         margin: 0;
-        font-size: clamp(1.08rem, 2vw, 1.34rem);
-        color: var(--text);
+        font-size: clamp(1.3rem, 2.6vw, 2rem);
+        line-height: 1.3;
       }
 
-      .team-title small {
-        color: var(--muted);
-        font-size: 0.86rem;
-        font-weight: 500;
+      .team-wrap {
+        grid-column: 1 / span 7;
       }
 
-      .team {
+      .links-wrap {
+        grid-column: span 5;
+      }
+
+      .section-label {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--text-soft);
+        font-size: 0.88rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .team-list {
         margin: 0;
         padding: 0;
         list-style: none;
@@ -161,160 +238,225 @@
         gap: 10px;
       }
 
-      .team li {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 12px;
-        border-bottom: 1px solid #f0f0f0;
-        padding-bottom: 8px;
+      .team-list li {
+        display: grid;
+        grid-template-columns: 20px 1fr auto;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 8px 0;
       }
 
-      .team li:last-child {
+      .team-list li:last-child {
         border-bottom: 0;
-        padding-bottom: 0;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #60a5fa;
+        box-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
       }
 
       .role {
-        color: var(--muted);
-        font-size: 0.94rem;
+        color: var(--text-soft);
       }
 
-      .mission-card {
-        grid-column: span 5;
+      .links-list {
+        display: grid;
+        gap: 12px;
       }
 
-      .team-card {
-        grid-column: span 7;
-      }
-
-      .links {
-        grid-column: 1 / -1;
-        background: var(--surface-soft);
-      }
-
-      .link-row {
+      .link-card {
         display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .link-row a {
-        display: inline-flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 8px;
         text-decoration: none;
         color: var(--text);
-        border: 1px solid #dbdbdb;
+        border: 1px solid var(--border);
         border-radius: 10px;
-        padding: 10px 14px;
-        background: #ffffff;
-        transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+        padding: 15px 16px;
+        background: rgba(255, 255, 255, 0.01);
+        transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
       }
 
-      .link-row a::after {
-        content: "↗";
-        font-size: 0.84rem;
-        color: var(--muted);
+      .link-card:hover {
+        transform: scale(1.02);
+        border-color: rgba(59, 130, 246, 0.52);
+        background: rgba(59, 130, 246, 0.08);
       }
 
-      .link-row a:hover {
-        border-color: rgba(196, 30, 58, 0.38);
-        color: var(--accent);
-        background: rgba(196, 30, 58, 0.02);
+      .link-card span:last-child {
+        color: var(--text-soft);
       }
 
       .footer {
-        margin: 28px 0 0;
-        color: #8a8a8a;
-        font-size: 0.88rem;
+        border-top: 1px solid var(--border);
+        padding: 30px 0 44px;
+        color: var(--text-soft);
+        font-size: 0.92rem;
       }
 
       .reveal {
         opacity: 0;
-        transform: translateY(14px);
-        animation: reveal-up 520ms ease forwards;
+        transform: translateY(20px);
+        transition: opacity 560ms ease, transform 560ms ease;
       }
 
-      .delay-1 {
-        animation-delay: 80ms;
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      .delay-2 {
-        animation-delay: 140ms;
-      }
+      @keyframes drift {
+        0% {
+          transform: translateX(0);
+        }
 
-      .delay-3 {
-        animation-delay: 220ms;
-      }
+        50% {
+          transform: translateX(-1.5%);
+        }
 
-      @keyframes reveal-up {
-        to {
-          opacity: 1;
-          transform: translateY(0);
+        100% {
+          transform: translateX(0);
         }
       }
 
-      @media (max-width: 900px) {
-        .mission-card,
-        .team-card {
+      @media (max-width: 1100px) {
+        .hero-content,
+        .team-wrap,
+        .links-wrap {
           grid-column: 1 / -1;
         }
+      }
 
-        .team li {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 2px;
+      @media (max-width: 800px) {
+        :root {
+          --pad-x: 20px;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+
+        .cta-row {
+          width: 100%;
+        }
+
+        .btn {
+          flex: 1 1 220px;
+        }
+
+        .team-list li {
+          grid-template-columns: 20px 1fr;
+          align-items: start;
+        }
+
+        .role {
+          grid-column: 2;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        * {
+        *,
+        *::before,
+        *::after {
           animation-duration: 1ms !important;
+          animation-iteration-count: 1 !important;
           transition-duration: 1ms !important;
           scroll-behavior: auto !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
         }
       }
     </style>
   </head>
   <body>
-    <main class="layout">
-      <section class="hero reveal">
-        <span class="badge">Beta / Semi-Automatic</span>
-        <h1>ONIZUKA AGI Co.</h1>
-        <p class="label">Agent AGI Co. ONIZUKA</p>
-        <p class="tagline">AIにミッションを与えて疑似的な会社を自律的に運用させる実験的プロジェクト</p>
+    <header class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="status">Beta / Semi-Automatic</span>
+          <h1>ONIZUKA AGI Co.</h1>
+          <p class="subheadline">Agent AGI Co. ONIZUKA</p>
+          <p class="tagline">AIにミッションを与えて疑似的な会社を自律的に運用させる実験的プロジェクト</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/onizuka-agi-co" target="_blank" rel="noreferrer noopener">GitHub Organization</a>
+            <a class="btn btn-secondary" href="https://github.com/orgs/onizuka-agi-co/projects/1" target="_blank" rel="noreferrer noopener">Project Board</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-        <div class="divider" aria-hidden="true"></div>
-
-        <section class="grid">
-          <article class="card mission-card reveal delay-1">
-            <h2>Mission</h2>
-            <p class="mission">AGIの知見をほどき、世界に届ける</p>
+    <main>
+      <section class="section">
+        <div class="container content-grid mission-wrap">
+          <article class="card reveal">
+            <span class="section-label">Mission</span>
+            <h2>AGIの知見をほどき、世界に届ける</h2>
+            <p class="mission-copy">実験的なAI組織運用を通して、実践知を体系化し、共有可能な形で発信する。</p>
           </article>
+        </div>
+      </section>
 
-          <article class="card team-card reveal delay-2">
-            <h2 class="team-title">Team Structure <small>(All-Codex Nested Sub-Agent)</small></h2>
-            <ul class="team">
-              <li><span>Main Session</span><span class="role">GLM-5</span></li>
-              <li><span>Orchestrator</span><span class="role">Codex5.3</span></li>
-              <li><span>Developer</span><span class="role">Codex5.3</span></li>
-              <li><span>Reviewer</span><span class="role">Codex5.3</span></li>
-              <li><span>Fixer</span><span class="role">Codex5.3</span></li>
+      <section class="section" aria-label="Team and links">
+        <div class="container content-grid">
+          <article class="card team-wrap reveal">
+            <span class="section-label">Team</span>
+            <h2>Team Structure (All-Codex Nested Sub-Agent)</h2>
+            <ul class="team-list">
+              <li><span class="dot" aria-hidden="true"></span><span>Main Session</span><span class="role">GLM-5</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span>Orchestrator</span><span class="role">Codex5.3</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span>Developer</span><span class="role">Codex5.3</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span>Reviewer</span><span class="role">Codex5.3</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span>Fixer</span><span class="role">Codex5.3</span></li>
             </ul>
           </article>
 
-          <article class="card links reveal delay-3">
-            <h2>Links</h2>
-            <div class="link-row">
-              <a href="https://github.com/onizuka-agi-co" target="_blank" rel="noreferrer noopener">GitHub Organization</a>
-              <a href="https://github.com/orgs/onizuka-agi-co/projects/1" target="_blank" rel="noreferrer noopener">Project Board</a>
+          <article class="card links-wrap reveal">
+            <span class="section-label">Links</span>
+            <h2>Project Access</h2>
+            <div class="links-list">
+              <a class="link-card" href="https://github.com/onizuka-agi-co" target="_blank" rel="noreferrer noopener">
+                <span>GitHub Organization</span>
+                <span>↗</span>
+              </a>
+              <a class="link-card" href="https://github.com/orgs/onizuka-agi-co/projects/1" target="_blank" rel="noreferrer noopener">
+                <span>Project Board</span>
+                <span>↗</span>
+              </a>
             </div>
           </article>
-        </section>
-
-        <p class="footer">ONIZUKA AGI Co. / Bamboo x Vermillion Interface</p>
+        </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="container">ONIZUKA AGI Co. / Bamboo x Vermillion Interface</div>
+    </footer>
+
+    <script>
+      (() => {
+        const items = document.querySelectorAll(".reveal");
+        if (!items.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+        );
+
+        items.forEach((item) => observer.observe(item));
+      })();
+    </script>
   </body>
 </html>
