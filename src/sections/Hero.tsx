@@ -81,14 +81,14 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${heroBgUrl})`,
-          opacity: 0.15,
+          opacity: 0.3,
         }}
       />
 
-      {/* Gradient overlay */}
+      {/* Gradient overlay - more transparent */}
       <div
         className="absolute inset-0 w-full h-full"
-        style={{ background: 'linear-gradient(180deg, #1a0505 0%, #000 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(26,5,5,0.7) 0%, rgba(0,0,0,0.8) 100%)' }}
       />
 
       {/* Canvas Background - transparent */}
