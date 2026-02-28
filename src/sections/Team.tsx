@@ -23,8 +23,8 @@ export default function Team() {
       role: t('team.roleRenji'),
       description: t('team.memberDescRenji'),
       icon: Crown,
-      avatarSrc: './favicon.svg',
-      avatarAlt: 'ONIZUKA logo',
+      avatarSrc: './avatar-renji.png',
+      avatarAlt: 'Renji ONIZUKA',
     },
     {
       number: '01',
@@ -32,7 +32,8 @@ export default function Team() {
       role: t('team.roleTuzuri'),
       description: t('team.memberDescTuzuri'),
       icon: Cat,
-      avatarEmoji: '🐱',
+      avatarSrc: './avatar-tuzuri.jpg',
+      avatarAlt: 'TUZURI',
     },
     {
       number: '02',
@@ -40,7 +41,8 @@ export default function Team() {
       role: t('team.roleAkari'),
       description: t('team.memberDescAkari'),
       icon: ClipboardList,
-      avatarEmoji: '🔔',
+      avatarSrc: './avatar-akari.jpg',
+      avatarAlt: 'AKARI',
     },
   ];
 
@@ -109,7 +111,8 @@ export default function Team() {
 
         {/* Team Members Section */}
         <div className="mb-16">
-          <h3 className="text-xl font-medium text-white/80 mb-6">{t('team.membersLabel')}</h3>
+          <h3 className="text-xl font-medium text-white/80 mb-3">{t('team.membersLabel')}</h3>
+          <p className="text-sm text-white/40 mb-6">{t('team.membersDescription')}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-red-900/20">
             {teamMembers.map((member) => (
               <div
@@ -164,7 +167,8 @@ export default function Team() {
 
         {/* AI Agents Section */}
         <div>
-          <h3 className="text-xl font-medium text-white/80 mb-6">{t('team.agentsLabel')}</h3>
+          <h3 className="text-xl font-medium text-white/80 mb-3">{t('team.agentsLabel')}</h3>
+          <p className="text-sm text-white/40 mb-6">{t('team.agentsDescription')}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-red-900/20">
             {aiAgents.map((agent) => (
               <div

@@ -45,7 +45,9 @@ const translations = {
     // Team
     'team.label': 'チーム',
     'team.membersLabel': 'チームメンバー',
+    'team.membersDescription': 'ONIZUKA AGI Co.を支える3人のメンバーです。',
     'team.agentsLabel': 'AIサブエージェント',
+    'team.agentsDescription': 'タスク実行を担う5つのAIエージェントです。',
     'team.title': 'チームメンバー',
     'team.headingLine1': 'Team',
     'team.headingHighlight': 'Members',
@@ -225,7 +227,9 @@ const translations = {
     // Team
     'team.label': 'Team',
     'team.membersLabel': 'Team Members',
+    'team.membersDescription': 'The three members who support ONIZUKA AGI Co.',
     'team.agentsLabel': 'AI Sub-agents',
+    'team.agentsDescription': 'Five AI agents responsible for task execution.',
     'team.title': 'Team Members',
     'team.headingLine1': 'Team',
     'team.headingHighlight': 'Members',
