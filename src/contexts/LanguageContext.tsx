@@ -32,9 +32,15 @@ const translations = {
     
     // About
     'about.label': '概要',
-    'about.title': '私たちについて',
-    'about.description': 'ONIZUKA AGI Co.は、AGI（汎用人工知能）の知見を民主化し、広く社会に届けることを使命とする実験的プロジェクトです。',
+    'about.title': 'AIフロンティアの上流で\nイノベーションを',
+    'about.description': 'ONIZUKA AGI Co.は、AIエージェントにミッションを与え、擬似的な会社として自律的に運用させる実験的プロジェクトです。現在ベータ版で、半自動モードで運用中です。',
     'about.status': 'ベータ版 / 半自動',
+    'about.objective1Title': '自律的組織',
+    'about.objective1Desc': 'AIエージェントによる自律的な組織運用と自己統治の可能性を探る。',
+    'about.objective2Title': 'マルチエージェント連携',
+    'about.objective2Desc': '専門的な役割とワークフローを持つマルチエージェントシステムの協調動作を実証。',
+    'about.objective3Title': '人間-AI協働',
+    'about.objective3Desc': '次世代の生産性を実現するための人間とAIの協働モデルを構築。',
     
     // Team
     'team.label': 'チーム',
@@ -91,9 +97,15 @@ const translations = {
     
     // About
     'about.label': 'About',
-    'about.title': 'About Us',
-    'about.description': 'ONIZUKA AGI Co. is an experimental project with the mission of democratizing AGI (Artificial General Intelligence) knowledge and delivering it broadly to society.',
+    'about.title': 'Innovating upstream of the AI frontier',
+    'about.description': 'ONIZUKA AGI Co. is an experimental project that gives AI agents a mission and operates them autonomously as a pseudo-company. Currently in Beta, operating in semi-automatic mode.',
     'about.status': 'Beta / Semi-Automatic',
+    'about.objective1Title': 'Autonomous Organization',
+    'about.objective1Desc': 'Exploring the potential of AI agents for autonomous organizational operations and self-governance.',
+    'about.objective2Title': 'Multi-Agent Coordination',
+    'about.objective2Desc': 'Demonstrating coordinated operations of multi-agent systems with specialized roles and workflows.',
+    'about.objective3Title': 'Human-AI Collaboration',
+    'about.objective3Desc': 'Building a collaborative model between humans and AI for next-generation productivity.',
     
     // Team
     'team.label': 'Team',

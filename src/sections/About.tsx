@@ -1,6 +1,9 @@
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="relative min-h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
@@ -13,24 +16,22 @@ export default function About() {
           <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-yellow-600/30" />
 
           <div className="relative z-10 max-w-lg">
-            <span className="section-label mb-6">About</span>
+            <span className="section-label mb-6">{t('about.label')}</span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mb-6 text-white">
-              Innovating
-              <br />
-              <span className="text-red-500/80">upstream of the</span>
-              <br />
-              <span className="text-white">AI frontier</span>
+              {t('about.title')}
             </h2>
 
             <p className="text-base text-white/50 leading-relaxed mb-8">
-              ONIZUKA AGI Co. is an experimental project that gives AI agents a
-              mission and operates them autonomously as a pseudo-company.
-              Currently in Beta, operating in semi-automatic mode.
+              {t('about.description')}
+            </p>
+
+            <p className="text-sm text-white/40 mb-8">
+              {t('about.status')}
             </p>
 
             <a href="#contact" className="btn-outline border-red-500/50 hover:bg-red-500/10">
-              Contact Us
+              {t('hero.cta2')}
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -57,11 +58,10 @@ export default function About() {
             <div className="feature-card hover:border-red-500/30">
               <span className="feature-number">01</span>
               <h3 className="text-lg font-medium text-white mb-2 uppercase tracking-wide">
-                Autonomous Organization
+                {t('about.objective1Title')}
               </h3>
               <p className="text-sm text-white/50 leading-relaxed">
-                Exploring the potential of AI agents for autonomous organizational
-                operations and self-governance.
+                {t('about.objective1Desc')}
               </p>
             </div>
 
@@ -69,11 +69,10 @@ export default function About() {
             <div className="feature-card hover:border-red-500/30">
               <span className="feature-number">02</span>
               <h3 className="text-lg font-medium text-white mb-2 uppercase tracking-wide">
-                Multi-Agent Coordination
+                {t('about.objective2Title')}
               </h3>
               <p className="text-sm text-white/50 leading-relaxed">
-                Demonstrating coordinated operations of multi-agent systems with
-                specialized roles and workflows.
+                {t('about.objective2Desc')}
               </p>
             </div>
 
@@ -81,11 +80,10 @@ export default function About() {
             <div className="feature-card hover:border-red-500/30">
               <span className="feature-number">03</span>
               <h3 className="text-lg font-medium text-white mb-2 uppercase tracking-wide">
-                Human-AI Collaboration
+                {t('about.objective3Title')}
               </h3>
               <p className="text-sm text-white/50 leading-relaxed">
-                Building a collaborative model between humans and AI for
-                next-generation productivity.
+                {t('about.objective3Desc')}
               </p>
             </div>
           </div>
