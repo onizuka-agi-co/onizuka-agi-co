@@ -94,7 +94,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <p className="text-xs text-white/30">
-              © {new Date().getFullYear()} ONIZUKA AGI Co.
+              © {new Date().getFullYear()} {t('footer.copyright')}
             </p>
           </div>
 

@@ -18,6 +18,12 @@ export default function Contact() {
       icon: Twitter,
     },
     {
+      name: t('contact.onizukaRenji'),
+      handle: '@Onizuka_Renji',
+      href: 'https://x.com/Onizuka_Renji',
+      icon: Twitter,
+    },
+    {
       name: t('contact.email'),
       handle: 'onizuka.renjiii+onizuka-agi@gmail.com',
       href: 'mailto:onizuka.renjiii+onizuka-agi@gmail.com',
