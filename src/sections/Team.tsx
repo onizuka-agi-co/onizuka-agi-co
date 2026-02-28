@@ -23,7 +23,7 @@ export default function Team() {
       role: t('team.roleRenji'),
       description: t('team.memberDescRenji'),
       icon: Crown,
-      avatarSrc: '/favicon.svg',
+      avatarSrc: './favicon.svg',
       avatarAlt: 'ONIZUKA logo',
     },
     {
