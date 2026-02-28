@@ -76,20 +76,21 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-end pb-20 overflow-hidden">
-      {/* Hero Background Image */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroBgUrl})`,
-          opacity: 0.7,
-        }}
-      />
-
       {/* Canvas Background - transparent */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
         style={{ background: 'transparent' }}
+      />
+
+      {/* Hero Background Image - on top of canvas */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none"
+        style={{
+          backgroundImage: `url(${heroBgUrl})`,
+          opacity: 0.4,
+          zIndex: 1,
+        }}
       />
 
       {/* Vermilion gradient overlay */}
