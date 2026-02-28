@@ -39,8 +39,8 @@ export default function Hero() {
     let animationId: number;
 
     const animate = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Clear canvas without filling with black
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       time += 0.01;
 
