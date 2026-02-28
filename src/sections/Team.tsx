@@ -1,20 +1,53 @@
-import { Network, Cpu, Code2, Eye, Wrench } from 'lucide-react';
+import { Network, Cpu, Code2, Eye, Wrench, Cat, ClipboardList, Crown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-type AIAgent = {
+type TeamMember = {
   number: string;
   name: string;
-  model: string;
   role: string;
   description: string;
   icon: React.ComponentType<{ className?: string }>;
+  avatarSrc?: string;
+  avatarAlt?: string;
+  avatarEmoji?: string;
 };
 
 export default function Team() {
   const { t } = useLanguage();
 
+  // Team Members (3 people)
+  const teamMembers: TeamMember[] = [
+    {
+      number: '00',
+      name: t('team.renji'),
+      role: t('team.roleRenji'),
+      description: t('team.memberDescRenji'),
+      icon: Crown,
+      avatarSrc: './avatar-renji.jpg',
+      avatarAlt: 'Renji ONIZUKA',
+    },
+    {
+      number: '01',
+      name: t('team.tuzuri'),
+      role: t('team.roleTuzuri'),
+      description: t('team.memberDescTuzuri'),
+      icon: Cat,
+      avatarSrc: './avatar-tuzuri.jpg',
+      avatarAlt: 'TUZURI',
+    },
+    {
+      number: '02',
+      name: t('team.akari'),
+      role: t('team.roleAkari'),
+      description: t('team.memberDescAkari'),
+      icon: ClipboardList,
+      avatarSrc: './avatar-akari.png',
+      avatarAlt: 'AKARI',
+    },
+  ];
+
   // AI Agents (5 agents)
-  const aiAgents: AIAgent[] = [
+  const aiAgents = [
     {
       number: '03',
       name: t('team.mainSession'),
@@ -76,6 +109,62 @@ export default function Team() {
           </p>
         </div>
 
+        {/* Team Members Section */}
+        <div className="mb-16">
+          <h3 className="text-xl font-medium text-white/80 mb-3">{t('team.membersLabel')}</h3>
+          <p className="text-sm text-white/40 mb-6">{t('team.membersDescription')}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-red-900/20">
+            {teamMembers.map((member) => (
+              <div
+                key={member.number}
+                className="bg-black p-8 hover:bg-red-950/10 transition-colors group border border-red-900/10 hover:border-red-500/30"
+              >
+                {/* Avatar */}
+                <div className="mb-5">
+                  <div className="w-16 h-16 rounded-full border border-red-500/30 bg-red-950/20 flex items-center justify-center overflow-hidden">
+                    {member.avatarSrc ? (
+                      <img
+                        src={member.avatarSrc}
+                        alt={member.avatarAlt ?? member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-2xl leading-none" aria-hidden="true">
+                        {member.avatarEmoji}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Icon */}
+                <div className="mb-6">
+                  <member.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+                </div>
+
+                {/* Number */}
+                <span className="text-xs font-mono text-red-600 mb-4 block">
+                  {member.number}
+                </span>
+
+                {/* Name */}
+                <h3 className="text-lg font-medium text-white mb-1 uppercase tracking-wide group-hover:text-red-400 transition-colors">
+                  {member.name}
+                </h3>
+
+                {/* Role */}
+                <p className="text-sm text-red-400/80 leading-relaxed mb-2">
+                  {member.role}
+                </p>
+
+                {/* Description */}
+                <p className="text-sm text-white/40 leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* AI Agents Section */}
         <div>
           <h3 className="text-xl font-medium text-white/80 mb-3">{t('team.agentsLabel')}</h3>
@@ -86,9 +175,11 @@ export default function Team() {
                 key={agent.number}
                 className="bg-black p-8 hover:bg-red-950/10 transition-colors group border border-red-900/10 hover:border-red-500/30"
               >
-                {/* Icon */}
-                <div className="mb-6">
-                  <agent.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+                {/* Avatar-style Icon */}
+                <div className="mb-5">
+                  <div className="w-16 h-16 rounded-full border border-red-500/30 bg-red-950/20 flex items-center justify-center overflow-hidden">
+                    <agent.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+                  </div>
                 </div>
 
                 {/* Number */}
