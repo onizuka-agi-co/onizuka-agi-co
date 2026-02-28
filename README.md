@@ -1,23 +1,78 @@
 <div align="center">
 
-# 🎋 ONIZUKA AGI Co.
+# 🧪 ONIZUKA AGI Co.
 
-**Democratizing AGI knowledge**
-*AGIの知見をほどき、世界に届ける*
+**Agent AGI Co. ONIZUKA**
+*AIにミッションを与えて疑似的な会社を自律的に運用させる実験的プロジェクト*
 
 ---
 
+[![Status](https://img.shields.io/badge/Status-Beta-yellow)](https://github.com/onizuka-agi-co)
+[![Automation](https://img.shields.io/badge/Automation-Semi--Automatic-orange)](https://github.com/onizuka-agi-co)
+
 </div>
 
-## 🏢 About
+---
 
-ONIZUKA AGI Co. は、AGI（汎用人工知能）の知見を民主化し、広く社会に届けることを使命とする組織です。
+## 🎯 About
+
+**ONIZUKA AGI Co.** は、AIエージェントにミッションを与え、疑似的な会社として自律的に運用させる実験的プロジェクトです。
+
+現在は**ベータ版**として、**半自動**の段階で運用しています。
+
+### 🚀 実験の目的
+
+- AIエージェントによる自律的な組織運用の可能性を探る
+- マルチエージェントシステムの協調動作を実証
+- 人間とAIの協働モデルを構築
+
+---
+
+## 🤖 Team Structure
+
+All-Codex Nested Sub-Agent実験によるチーム編成:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  🧪 All-Codex Nested Sub-Agent実験                      │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  [Main Session] (GLM-5)                                 │
+│         │                                               │
+│         └── spawn ──► [Orchestrator] (Codex5.3) ✅       │
+│                              │                          │
+│                              ├── spawn ──► [Developer]  │
+│                              │              (Codex5.3)  │
+│                              │                          │
+│                              ├── spawn ──► [Reviewer]   │
+│                              │              (Codex5.3)  │
+│                              │                          │
+│                              └── spawn ──► [Fixer]      │
+│                                             (Codex5.3)  │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+### 役割分担
+
+| エージェント | モデル | 役割 |
+|-------------|--------|------|
+| **Main Session** | GLM-5 | 全体指挥・ユーザー対応 |
+| **Orchestrator** | Codex5.3 | タスク調整・進捗管理 |
+| **Developer** | Codex5.3 | 実装・コード作成 |
+| **Reviewer** | Codex5.3 | コードレビュー・品質確認 |
+| **Fixer** | Codex5.3 | バグ修正・改善 |
+
+---
 
 ## 📜 Mission
 
 > **「AGIの知見をほどき、世界に届ける」**
+> ~ Democratizing AGI knowledge ~
 
 私たちは、AGI技術の進歩に伴う知識や洞察を整理し、誰もがアクセスできる形で公開します。
+
+---
 
 ## 🔥 Activities
 
@@ -26,6 +81,9 @@ ONIZUKA AGI Co. は、AGI（汎用人工知能）の知見を民主化し、広�
 | 📜 **投稿の深掘り** | @hAru_mAki_ch の投稿を深掘り・補足解説 |
 | 📰 **論文の要約** | 最新AGI論文の要約・解説 |
 | 🔓 **知見の公開** | 知見を整理して公開 |
+| 🤖 **エージェント開発** | 自律エージェントスキルの開発 |
+
+---
 
 ## 🛠️ Skills
 
@@ -42,6 +100,18 @@ ONIZUKA AGI Co. は、AGI（汎用人工知能）の知見を民主化し、広�
 
 詳細は [skills](https://github.com/onizuka-agi-co/skills) リポジトリを参照してください。
 
+---
+
+## 📊 Project Status
+
+| 項目 | 状態 |
+|------|------|
+| 自動化レベル | 半自動 (Semi-Automatic) |
+| バージョン | Beta |
+| 運用体制 | 実験中 |
+
+---
+
 ## 📫 Contact
 
 - **GitHub**: [onizuka-agi-co](https://github.com/onizuka-agi-co)
@@ -50,8 +120,18 @@ ONIZUKA AGI Co. は、AGI（汎用人工知能）の知見を民主化し、広�
 
 ---
 
+## 📋 Task Management
+
+タスクは GitHub Project で管理しています:
+
+👉 [ONIZUKA AGI Co. Project](https://github.com/orgs/onizuka-agi-co/projects/1)
+
+---
+
 <div align="center">
 
 **🎋 朱の守護者 — 結界と祭儀を司る**
+
+*This is an experimental project exploring autonomous AI organization.*
 
 </div>
