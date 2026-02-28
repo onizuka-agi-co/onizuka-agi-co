@@ -1,116 +1,64 @@
+[![日本語](https://img.shields.io/badge/日本語-Readme-blue)](./README.ja.md)
+
 <div align="center">
+  <img src="https://raw.githubusercontent.com/onizuka-agi-co/onizuka-agi-co/main/public/hero-bg.png" alt="ONIZUKA AGI Co." width="100%">
 
-# 🧪 ONIZUKA AGI Co.
+  # 🧪 ONIZUKA AGI Co.
 
-**Agent AGI Co. ONIZUKA**
-*AIにミッションを与えて疑似的な会社を自律的に運用させる実験的プロジェクト*
+  **Agent AGI Co. ONIZUKA**
+  *An experimental project where AI agents operate autonomously as a pseudo-company*
 
----
-
-[![Status](https://img.shields.io/badge/Status-Beta-yellow)](https://github.com/onizuka-agi-co)
-[![Automation](https://img.shields.io/badge/Automation-Semi--Automatic-orange)](https://github.com/onizuka-agi-co)
-
+  [![Status](https://img.shields.io/badge/Status-Beta-yellow)](https://github.com/onizuka-agi-co)
+  [![Automation](https://img.shields.io/badge/Automation-Semi--Automatic-orange)](https://github.com/onizuka-agi-co)
 </div>
-
----
 
 ## 🎯 About
 
-**ONIZUKA AGI Co.** は、AIエージェントにミッションを与え、疑似的な会社として自律的に運用させる実験的プロジェクトです。
+**ONIZUKA AGI Co.** is an experimental project that gives AI agents a mission and runs them as a pseudo-company with autonomous operations.
 
-現在は**ベータ版**として、**半自動**の段階で運用しています。
+The project is currently in **Beta** and operating in a **semi-automatic** mode.
 
-### 🚀 実験の目的
+## 👥 Team Members
 
-- AIエージェントによる自律的な組織運用の可能性を探る
-- マルチエージェントシステムの協調動作を実証
-- 人間とAIの協働モデルを構築
+- **Renji ONIZUKA** (CEO) - Handles all operations by default
+- **TUZURI** (Pet) - Handles notifications for GitHub and X
+- **AKARI** (Secretary Agent) - A secretary agent for AI agents, supports CEO
 
----
+## 🤖 AI Sub-agents
 
-## 🤖 Team Structure
-
-All-Codex Nested Sub-Agent実験によるチーム編成:
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  🧪 All-Codex Nested Sub-Agent実験                      │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  [Main Session] (GLM-5)                                 │
-│         │                                               │
-│         └── spawn ──► [Orchestrator] (Codex5.3) ✅       │
-│                              │                          │
-│                              ├── spawn ──► [Developer]  │
-│                              │              (Codex5.3)  │
-│                              │                          │
-│                              ├── spawn ──► [Reviewer]   │
-│                              │              (Codex5.3)  │
-│                              │                          │
-│                              └── spawn ──► [Fixer]      │
-│                                             (Codex5.3)  │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
-
-### 役割分担
-
-| エージェント | モデル | 役割 |
-|-------------|--------|------|
-| **Main Session** | GLM-5 | 全体指挥・ユーザー対応 |
-| **Orchestrator** | Codex5.3 | タスク調整・進捗管理 |
-| **Developer** | Codex5.3 | 実装・コード作成 |
-| **Reviewer** | Codex5.3 | コードレビュー・品質確認 |
-| **Fixer** | Codex5.3 | バグ修正・改善 |
-
----
+- **Main Session** (GLM-5) - Overall control and user-facing communication
+- **Orchestrator** (Codex5.3) - Task coordination and progress management
+- **Developer** (Codex5.3) - Implementation and code development
+- **Reviewer** (Codex5.3) - Code review and quality assurance
+- **Fixer** (Codex5.3) - Bug fixes and refinements
 
 ## 📜 Mission
 
-> **「AGIの知見をほどき、世界に届ける」**
-> ~ Democratizing AGI knowledge ~
+> **"Democratizing AGI knowledge"**
 
-私たちは、AGI技術の進歩に伴う知識や洞察を整理し、誰もがアクセスできる形で公開します。
-
----
+We organize and publish AGI-related knowledge and insights in a way that is accessible to everyone.
 
 ## 🔥 Activities
 
-| 分野 | 内容 |
-|------|------|
-| 📜 **投稿の深掘り** | @hAru_mAki_ch の投稿を深掘り・補足解説 |
-| 📰 **論文の要約** | 最新AGI論文の要約・解説 |
-| 🔓 **知見の公開** | 知見を整理して公開 |
-| 🤖 **エージェント開発** | 自律エージェントスキルの開発 |
-
----
+- Deep analysis and supplementary explanations of posts from **@hAru_mAki_ch**
+- Summaries and commentary on the latest AGI papers
+- Structuring and publishing AGI insights
+- Developing autonomous agent skills
 
 ## 🛠️ Skills
 
-私たちは、AIエージェントのためのスキル（AgentSkills）を開発・公開しています。
+We develop and publish AgentSkills for AI agents.
 
-- **x-read** / **x-write** — X (Twitter) API 操作
-- **x-community** — コミュニティ投稿
-- **x-stream** — Filtered Stream 監視
-- **gemini-vision** — Gemini Vision API
-- **glm-code** — Claude Code via GLM
-- **google-browse** — Google検索・ブラウズ
-- **idea-dev** — 新規企画開発
-- **daily-memory** — 日報管理
+- **x-read** / **x-write** - X (Twitter) API operations
+- **x-community** - Community posting support
+- **x-stream** - Filtered Stream monitoring
+- **gemini-vision** - Gemini Vision API integration
+- **glm-code** - Claude Code via GLM
+- **google-browse** - Google search and browsing
+- **idea-dev** - New idea planning and development
+- **daily-memory** - Daily report and memory management
 
-詳細は [skills](https://github.com/onizuka-agi-co/skills) リポジトリを参照してください。
-
----
-
-## 📊 Project Status
-
-| 項目 | 状態 |
-|------|------|
-| 自動化レベル | 半自動 (Semi-Automatic) |
-| バージョン | Beta |
-| 運用体制 | 実験中 |
-
----
+See the [skills](https://github.com/onizuka-agi-co/skills) repository for details.
 
 ## 📫 Contact
 
@@ -118,20 +66,10 @@ All-Codex Nested Sub-Agent実験によるチーム編成:
 - **Email**: onizuka.renjiii+onizuka-agi@gmail.com
 - **X (Twitter)**: [@hAru_mAki_ch](https://x.com/hAru_mAki_ch)
 
----
+## 📊 Project Status
 
-## 📋 Task Management
-
-タスクは GitHub Project で管理しています:
-
-👉 [ONIZUKA AGI Co. Project](https://github.com/orgs/onizuka-agi-co/projects/1)
-
----
-
-<div align="center">
-
-**🎋 朱の守護者 — 結界と祭儀を司る**
-
-*This is an experimental project exploring autonomous AI organization.*
-
-</div>
+| Item | Status |
+|------|--------|
+| Automation Level | Semi-Automatic |
+| Version | Beta |
+| Operation Mode | Experimental |
