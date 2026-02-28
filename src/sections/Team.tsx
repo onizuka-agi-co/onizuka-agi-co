@@ -1,4 +1,4 @@
-import { Network, Cpu, Code2, Eye, Wrench } from 'lucide-react';
+import { Network, Cpu, Code2, Eye, Wrench, Cat, Bell, ClipboardList, Briefcase } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Team() {
@@ -10,6 +10,7 @@ export default function Team() {
       name: t('team.mainSession'),
       model: 'GLM-5',
       role: t('team.roleMainSession'),
+      description: t('team.memberDescMainSession'),
       icon: Network,
     },
     {
@@ -17,6 +18,7 @@ export default function Team() {
       name: t('team.orchestrator'),
       model: 'Codex5.3',
       role: t('team.roleOrchestrator'),
+      description: t('team.memberDescOrchestrator'),
       icon: Cpu,
     },
     {
@@ -24,6 +26,7 @@ export default function Team() {
       name: t('team.developer'),
       model: 'Codex5.3',
       role: t('team.roleDeveloper'),
+      description: t('team.memberDescDeveloper'),
       icon: Code2,
     },
     {
@@ -31,6 +34,7 @@ export default function Team() {
       name: t('team.reviewer'),
       model: 'Codex5.3',
       role: t('team.roleReviewer'),
+      description: t('team.memberDescReviewer'),
       icon: Eye,
     },
     {
@@ -38,7 +42,36 @@ export default function Team() {
       name: t('team.fixer'),
       model: 'Codex5.3',
       role: t('team.roleFixer'),
+      description: t('team.memberDescFixer'),
       icon: Wrench,
+    },
+    {
+      number: '05',
+      name: t('team.tuzuri'),
+      role: t('team.roleTuzuri'),
+      description: t('team.memberDescTuzuri'),
+      icon: Cat,
+    },
+    {
+      number: '06',
+      name: t('team.notificationManager'),
+      role: t('team.roleNotificationManager'),
+      description: t('team.memberDescNotificationManager'),
+      icon: Bell,
+    },
+    {
+      number: '07',
+      name: t('team.akari'),
+      role: t('team.roleAkari'),
+      description: t('team.memberDescAkari'),
+      icon: ClipboardList,
+    },
+    {
+      number: '08',
+      name: t('team.ceoSupport'),
+      role: t('team.roleCeoSupport'),
+      description: t('team.memberDescCeoSupport'),
+      icon: Briefcase,
     },
   ];
 
@@ -84,13 +117,20 @@ export default function Team() {
               </h3>
 
               {/* Model */}
-              <p className="text-xs font-mono text-white/30 mb-4">
-                {agent.model}
-              </p>
+              {agent.model && (
+                <p className="text-xs font-mono text-white/30 mb-4">
+                  {agent.model}
+                </p>
+              )}
 
               {/* Role */}
-              <p className="text-sm text-white/40 leading-relaxed">
+              <p className="text-sm text-red-400/80 leading-relaxed mb-2">
                 {agent.role}
+              </p>
+
+              {/* Description */}
+              <p className="text-sm text-white/40 leading-relaxed">
+                {agent.description}
               </p>
             </div>
           ))}
