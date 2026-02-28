@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
+// Import hero background image
+const heroBgUrl = new URL('../../public/hero-bg.png', import.meta.url).href;
+
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -77,7 +80,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/hero-bg.png)',
+          backgroundImage: `url(${heroBgUrl})`,
           opacity: 0.08,
         }}
       />
