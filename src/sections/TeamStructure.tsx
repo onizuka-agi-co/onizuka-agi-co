@@ -53,7 +53,7 @@ export default function TeamStructure() {
   ];
 
   return (
-    <section id="team" className="py-24 sm:py-32 relative">
+    <section id="team-structure" className="py-24 sm:py-32 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">

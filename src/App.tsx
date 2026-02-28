@@ -5,6 +5,7 @@ import About from './sections/About';
 import Features from './sections/Features';
 import Visual from './sections/Visual';
 import Team from './sections/Team';
+import TeamStructure from './sections/TeamStructure';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
@@ -28,6 +29,7 @@ function App() {
         <Features />
         <Visual />
         <Team />
+        <TeamStructure />
         <Contact />
       </main>
       <Footer />
