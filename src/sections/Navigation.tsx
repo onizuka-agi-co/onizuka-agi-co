@@ -1,10 +1,14 @@
 import { FlaskConical, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageToggle from '../components/LanguageToggle';
 
 interface NavigationProps {
   scrolled: boolean;
 }
 
 export default function Navigation({ scrolled }: NavigationProps) {
+  const { t } = useLanguage();
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -25,27 +29,33 @@ export default function Navigation({ scrolled }: NavigationProps) {
               href="#about"
               className="text-xs font-medium tracking-wider text-white/60 hover:text-red-500 transition-colors uppercase"
             >
-              About
+              {t('nav.about')}
             </a>
             <a
-              href="#features"
+              href="#mission"
               className="text-xs font-medium tracking-wider text-white/60 hover:text-red-500 transition-colors uppercase"
             >
-              Features
+              {t('nav.mission')}
             </a>
             <a
               href="#team"
               className="text-xs font-medium tracking-wider text-white/60 hover:text-red-500 transition-colors uppercase"
             >
-              Team
+              {t('nav.team')}
             </a>
+            <LanguageToggle />
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white text-xs font-medium tracking-wider uppercase hover:bg-red-600 transition-colors"
             >
-              Join Us
+              {t('hero.cta1')}
               <ArrowRight className="w-3 h-3" />
             </a>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center gap-4">
+            <LanguageToggle />
           </div>
         </div>
       </div>

@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Use GitHub raw URL for hero background image
 const heroBgUrl = 'https://raw.githubusercontent.com/onizuka-agi-co/onizuka-agi-co/refs/heads/main/public/hero-bg.png';
 
 export default function Hero() {
+  const { t } = useLanguage();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -109,7 +111,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         <div className="max-w-3xl">
           {/* Label */}
-          <span className="section-label mb-6">Intro</span>
+          <span className="section-label mb-6">{t('hero.label')}</span>
 
           {/* Main Title */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6 tracking-tight">
@@ -121,18 +123,17 @@ export default function Hero() {
 
           {/* Description */}
           <p className="text-base sm:text-lg text-white/50 max-w-xl mb-10 leading-relaxed">
-            Agent AGI Experimental Company — AI agents operating autonomously
-            as a pseudo-company, exploring the frontier of human-AI collaboration.
+            {t('hero.description')}
           </p>
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">
             <a href="#contact" className="btn-primary">
-              Join Us
+              {t('hero.cta1')}
               <ArrowRight className="w-4 h-4" />
             </a>
             <a href="#about" className="btn-outline">
-              Contact Us
+              {t('hero.cta2')}
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

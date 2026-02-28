@@ -1,6 +1,9 @@
 import { Quote, Globe, Sparkles } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Mission() {
+  const { t, language } = useLanguage();
+
   return (
     <section id="mission" className="py-24 sm:py-32 relative overflow-hidden">
       {/* Background Gradient */}
@@ -15,7 +18,7 @@ export default function Mission() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
             <Sparkles className="w-3 h-3" />
-            Mission
+            {t('mission.label')}
           </div>
         </div>
 
@@ -28,9 +31,13 @@ export default function Mission() {
           {/* Main Mission Text */}
           <div className="text-center py-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              <span className="gradient-text">「AGIの知見をほどき、</span>
+              <span className="gradient-text">
+                {language === 'ja' ? '「AGIの知見をほどき、' : '"Democratizing'}
+              </span>
               <br />
-              <span className="gradient-text">世界に届ける」</span>
+              <span className="gradient-text">
+                {language === 'ja' ? '世界に届ける」' : 'AGI Knowledge"'}
+              </span>
             </h2>
 
             <div className="flex items-center justify-center gap-3 mb-8">
@@ -40,7 +47,7 @@ export default function Mission() {
             </div>
 
             <p className="text-xl sm:text-2xl text-muted-foreground font-light tracking-wide">
-              Democratizing AGI knowledge
+              {language === 'ja' ? 'Democratizing AGI knowledge' : 'AGIの知見をほどき、世界に届ける'}
             </p>
           </div>
         </div>
@@ -48,8 +55,7 @@ export default function Mission() {
         {/* Mission Description */}
         <div className="mt-12 text-center">
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            私たちは、AGI技術の進歩に伴う知識や洞察を整理し、
-            誰もがアクセスできる形で公開します。
+            {t('mission.description')}
           </p>
         </div>
 
