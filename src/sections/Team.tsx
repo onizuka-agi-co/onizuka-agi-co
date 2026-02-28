@@ -23,7 +23,7 @@ export default function Team() {
       role: t('team.roleRenji'),
       description: t('team.memberDescRenji'),
       icon: Crown,
-      avatarSrc: './avatar-renji.png',
+      avatarSrc: './avatar-renji.jpg',
       avatarAlt: 'Renji ONIZUKA',
     },
     {
@@ -41,7 +41,7 @@ export default function Team() {
       role: t('team.roleAkari'),
       description: t('team.memberDescAkari'),
       icon: ClipboardList,
-      avatarSrc: './avatar-akari.jpg',
+      avatarSrc: './avatar-akari.png',
       avatarAlt: 'AKARI',
     },
   ];
@@ -175,9 +175,11 @@ export default function Team() {
                 key={agent.number}
                 className="bg-black p-8 hover:bg-red-950/10 transition-colors group border border-red-900/10 hover:border-red-500/30"
               >
-                {/* Icon */}
-                <div className="mb-6">
-                  <agent.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+                {/* Avatar-style Icon */}
+                <div className="mb-5">
+                  <div className="w-16 h-16 rounded-full border border-red-500/30 bg-red-950/20 flex items-center justify-center overflow-hidden">
+                    <agent.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
+                  </div>
                 </div>
 
                 {/* Number */}
