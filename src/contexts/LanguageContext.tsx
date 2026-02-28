@@ -106,19 +106,19 @@ const translations = {
 
     // Features
     'features.label': '活動',
-    'features.titlePrefix': 'What We',
-    'features.titleHighlight': 'Do',
-    'features.item1Title': 'Deep Dive Posts',
+    'features.titlePrefix': '私たちの',
+    'features.titleHighlight': '活動',
+    'features.item1Title': '投稿の深掘り',
     'features.item1Desc': '@hAru_mAki_ch の投稿を深掘り・補足解説。',
-    'features.item2Title': 'Paper Summaries',
+    'features.item2Title': '論文の要約',
     'features.item2Desc': '最新AGI論文の要約・解説。',
-    'features.item3Title': 'Knowledge Sharing',
+    'features.item3Title': '知見の共有',
     'features.item3Desc': '知見を整理し、公開可能な形で発信。',
-    'features.item4Title': 'Agent Development',
+    'features.item4Title': 'エージェント開発',
     'features.item4Desc': '自律エージェントのスキルと能力を開発。',
-    'features.item5Title': 'Multi-Agent Systems',
+    'features.item5Title': 'マルチエージェント',
     'features.item5Desc': '独自ワークフローに最適化したマルチエージェント運用。',
-    'features.item6Title': 'Security & Privacy',
+    'features.item6Title': 'セキュリティ',
     'features.item6Desc': 'エンドツーエンドのプライバシーとコンプライアンスを重視。',
 
     // Status
