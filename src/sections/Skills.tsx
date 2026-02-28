@@ -1,18 +1,33 @@
 import { Wrench, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
-const skills = [
-  { name: 'x-read', description: 'X (Twitter) API 操作' },
-  { name: 'x-write', description: 'X (Twitter) API 操作' },
-  { name: 'x-community', description: 'コミュニティ投稿' },
-  { name: 'x-stream', description: 'Filtered Stream 監視' },
-  { name: 'gemini-vision', description: 'Gemini Vision API' },
-  { name: 'glm-code', description: 'Claude Code via GLM' },
-  { name: 'google-browse', description: 'Google検索・ブラウズ' },
-  { name: 'idea-dev', description: '新規企画開発' },
-  { name: 'daily-memory', description: '日報管理' },
+const skillNames = [
+  'x-read',
+  'x-write',
+  'x-community',
+  'x-stream',
+  'gemini-vision',
+  'glm-code',
+  'google-browse',
+  'idea-dev',
+  'daily-memory',
 ];
 
 export default function Skills() {
+  const { t } = useLanguage();
+
+  const skills = [
+    { name: skillNames[0], description: t('skills.item1Desc') },
+    { name: skillNames[1], description: t('skills.item2Desc') },
+    { name: skillNames[2], description: t('skills.item3Desc') },
+    { name: skillNames[3], description: t('skills.item4Desc') },
+    { name: skillNames[4], description: t('skills.item5Desc') },
+    { name: skillNames[5], description: t('skills.item6Desc') },
+    { name: skillNames[6], description: t('skills.item7Desc') },
+    { name: skillNames[7], description: t('skills.item8Desc') },
+    { name: skillNames[8], description: t('skills.item9Desc') },
+  ];
+
   return (
     <section id="skills" className="py-24 sm:py-32 relative">
       {/* Background Pattern */}
@@ -31,13 +46,13 @@ export default function Skills() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
             <Wrench className="w-3 h-3" />
-            Skills
+            {t('skills.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            AgentSkills
+            {t('skills.heading')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            AIエージェントのためのスキルを開発・公開しています
+            {t('skills.description')}
           </p>
         </div>
 
@@ -77,7 +92,7 @@ export default function Skills() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors text-sm"
           >
-            skills リポジトリを見る
+            {t('skills.repoLink')}
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>

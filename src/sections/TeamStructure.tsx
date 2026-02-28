@@ -1,54 +1,57 @@
 import { Network, Cpu, Code2, Eye, Wrench } from 'lucide-react';
-
-const agents = [
-  {
-    name: 'Main Session',
-    model: 'GLM-5',
-    role: '全体指揮・ユーザー対応',
-    level: 0,
-    color: 'from-blue-500/20 to-blue-600/20',
-    borderColor: 'border-blue-500/30',
-    iconColor: 'text-blue-400',
-  },
-  {
-    name: 'Orchestrator',
-    model: 'Codex5.3',
-    role: 'タスク調整・進捗管理',
-    level: 1,
-    color: 'from-primary/20 to-red-600/20',
-    borderColor: 'border-primary/30',
-    iconColor: 'text-primary',
-  },
-  {
-    name: 'Developer',
-    model: 'Codex5.3',
-    role: '実装・コード作成',
-    level: 2,
-    color: 'from-emerald-500/20 to-emerald-600/20',
-    borderColor: 'border-emerald-500/30',
-    iconColor: 'text-emerald-400',
-  },
-  {
-    name: 'Reviewer',
-    model: 'Codex5.3',
-    role: 'コードレビュー・品質確認',
-    level: 2,
-    color: 'from-amber-500/20 to-amber-600/20',
-    borderColor: 'border-amber-500/30',
-    iconColor: 'text-amber-400',
-  },
-  {
-    name: 'Fixer',
-    model: 'Codex5.3',
-    role: 'バグ修正・改善',
-    level: 2,
-    color: 'from-purple-500/20 to-purple-600/20',
-    borderColor: 'border-purple-500/30',
-    iconColor: 'text-purple-400',
-  },
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function TeamStructure() {
+  const { t } = useLanguage();
+
+  const agents = [
+    {
+      name: t('team.mainSession'),
+      model: 'GLM-5',
+      role: t('team.roleMainSession'),
+      level: 0,
+      color: 'from-blue-500/20 to-blue-600/20',
+      borderColor: 'border-blue-500/30',
+      iconColor: 'text-blue-400',
+    },
+    {
+      name: t('team.orchestrator'),
+      model: 'Codex5.3',
+      role: t('team.roleOrchestrator'),
+      level: 1,
+      color: 'from-primary/20 to-red-600/20',
+      borderColor: 'border-primary/30',
+      iconColor: 'text-primary',
+    },
+    {
+      name: t('team.developer'),
+      model: 'Codex5.3',
+      role: t('team.roleDeveloper'),
+      level: 2,
+      color: 'from-emerald-500/20 to-emerald-600/20',
+      borderColor: 'border-emerald-500/30',
+      iconColor: 'text-emerald-400',
+    },
+    {
+      name: t('team.reviewer'),
+      model: 'Codex5.3',
+      role: t('team.roleReviewer'),
+      level: 2,
+      color: 'from-amber-500/20 to-amber-600/20',
+      borderColor: 'border-amber-500/30',
+      iconColor: 'text-amber-400',
+    },
+    {
+      name: t('team.fixer'),
+      model: 'Codex5.3',
+      role: t('team.roleFixer'),
+      level: 2,
+      color: 'from-purple-500/20 to-purple-600/20',
+      borderColor: 'border-purple-500/30',
+      iconColor: 'text-purple-400',
+    },
+  ];
+
   return (
     <section id="team" className="py-24 sm:py-32 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,13 +59,13 @@ export default function TeamStructure() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
             <Network className="w-3 h-3" />
-            Team Structure
+            {t('teamStructure.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            All-Codex Nested Sub-Agent
+            {t('teamStructure.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            実験によるチーム編成
+            {t('teamStructure.subtitle')}
           </p>
         </div>
 
@@ -162,7 +165,7 @@ export default function TeamStructure() {
                     <p className="text-xs text-muted-foreground">{agents[1].model}</p>
                   </div>
                   <span className="ml-auto px-2 py-1 text-xs bg-primary/20 text-primary rounded-full">
-                    spawn
+                    {t('teamStructure.spawn')}
                   </span>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">{agents[1].role}</p>
@@ -228,13 +231,13 @@ export default function TeamStructure() {
             <thead>
               <tr className="bg-muted/50">
                 <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase">
-                  エージェント
+                  {t('teamStructure.tableAgent')}
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase">
-                  モデル
+                  {t('teamStructure.tableModel')}
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase">
-                  役割
+                  {t('teamStructure.tableRole')}
                 </th>
               </tr>
             </thead>

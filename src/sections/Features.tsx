@@ -1,47 +1,48 @@
 import { ScrollText, Newspaper, Unlock, Bot, Cpu, Shield } from 'lucide-react';
-
-const features = [
-  {
-    number: '01',
-    title: 'Deep Dive Posts',
-    description:
-      'In-depth analysis and supplementary explanations of @hAru_mAki_ch posts.',
-    icon: ScrollText,
-  },
-  {
-    number: '02',
-    title: 'Paper Summaries',
-    description: 'Summaries and explanations of the latest AGI research papers.',
-    icon: Newspaper,
-  },
-  {
-    number: '03',
-    title: 'Knowledge Sharing',
-    description: 'Organizing and publishing insights for public access.',
-    icon: Unlock,
-  },
-  {
-    number: '04',
-    title: 'Agent Development',
-    description: 'Development of autonomous agent skills and capabilities.',
-    icon: Bot,
-  },
-  {
-    number: '05',
-    title: 'Multi-Agent Systems',
-    description: 'Fine-tuning and alignment on proprietary workflows.',
-    icon: Cpu,
-  },
-  {
-    number: '06',
-    title: 'Security & Privacy',
-    description:
-      'Enterprise-grade guardrails guaranteeing end-to-end privacy and compliance.',
-    icon: Shield,
-  },
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Features() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      number: '01',
+      title: t('features.item1Title'),
+      description: t('features.item1Desc'),
+      icon: ScrollText,
+    },
+    {
+      number: '02',
+      title: t('features.item2Title'),
+      description: t('features.item2Desc'),
+      icon: Newspaper,
+    },
+    {
+      number: '03',
+      title: t('features.item3Title'),
+      description: t('features.item3Desc'),
+      icon: Unlock,
+    },
+    {
+      number: '04',
+      title: t('features.item4Title'),
+      description: t('features.item4Desc'),
+      icon: Bot,
+    },
+    {
+      number: '05',
+      title: t('features.item5Title'),
+      description: t('features.item5Desc'),
+      icon: Cpu,
+    },
+    {
+      number: '06',
+      title: t('features.item6Title'),
+      description: t('features.item6Desc'),
+      icon: Shield,
+    },
+  ];
+
   return (
     <section id="features" className="relative py-24 lg:py-32 bg-black">
       {/* Vermilion accent line */}
@@ -50,9 +51,9 @@ export default function Features() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-16">
-          <span className="section-label border-red-500/30 text-red-400/80 mb-6">Activities</span>
+          <span className="section-label border-red-500/30 text-red-400/80 mb-6">{t('features.label')}</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white">
-            What We <span className="text-red-600">Do</span>
+            {t('features.titlePrefix')} <span className="text-red-600">{t('features.titleHighlight')}</span>
           </h2>
         </div>
 

@@ -1,33 +1,36 @@
 import { BarChart3, Activity, GitBranch, FlaskConical } from 'lucide-react';
-
-const statusItems = [
-  {
-    label: '自動化レベル',
-    value: '半自動',
-    subValue: 'Semi-Automatic',
-    icon: Activity,
-    color: 'text-amber-400',
-    bgColor: 'bg-amber-400/10',
-  },
-  {
-    label: 'バージョン',
-    value: 'Beta',
-    subValue: 'v0.1.0',
-    icon: GitBranch,
-    color: 'text-primary',
-    bgColor: 'bg-primary/10',
-  },
-  {
-    label: '運用体制',
-    value: '実験中',
-    subValue: 'Experimental',
-    icon: FlaskConical,
-    color: 'text-emerald-400',
-    bgColor: 'bg-emerald-400/10',
-  },
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Status() {
+  const { t } = useLanguage();
+
+  const statusItems = [
+    {
+      label: t('status.item1Label'),
+      value: t('status.item1Value'),
+      subValue: t('status.item1SubValue'),
+      icon: Activity,
+      color: 'text-amber-400',
+      bgColor: 'bg-amber-400/10',
+    },
+    {
+      label: t('status.item2Label'),
+      value: t('status.item2Value'),
+      subValue: t('status.item2SubValue'),
+      icon: GitBranch,
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+    },
+    {
+      label: t('status.item3Label'),
+      value: t('status.item3Value'),
+      subValue: t('status.item3SubValue'),
+      icon: FlaskConical,
+      color: 'text-emerald-400',
+      bgColor: 'bg-emerald-400/10',
+    },
+  ];
+
   return (
     <section className="py-24 sm:py-32 relative">
       {/* Background Gradient */}
@@ -38,10 +41,10 @@ export default function Status() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
             <BarChart3 className="w-3 h-3" />
-            Project Status
+            {t('status.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            プロジェクト状況
+            {t('status.heading')}
           </h2>
         </div>
 
@@ -76,8 +79,8 @@ export default function Status() {
         {/* Progress Bar */}
         <div className="mt-12 p-6 rounded-2xl bg-card border border-border/50">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm text-muted-foreground">自動化進捗</span>
-            <span className="text-sm font-medium text-primary">50%</span>
+            <span className="text-sm text-muted-foreground">{t('status.progressLabel')}</span>
+            <span className="text-sm font-medium text-primary">{t('status.progressValue')}</span>
           </div>
           <div className="h-2 rounded-full bg-muted overflow-hidden">
             <div
@@ -86,9 +89,9 @@ export default function Status() {
             />
           </div>
           <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
-            <span>Manual</span>
-            <span>Semi-Auto</span>
-            <span>Full-Auto</span>
+            <span>{t('status.progressManual')}</span>
+            <span>{t('status.progressSemi')}</span>
+            <span>{t('status.progressFull')}</span>
           </div>
         </div>
       </div>

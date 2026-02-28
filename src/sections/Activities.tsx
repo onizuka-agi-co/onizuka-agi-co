@@ -1,33 +1,36 @@
 import { Flame, ScrollText, Newspaper, Unlock, Bot } from 'lucide-react';
-
-const activities = [
-  {
-    number: '01',
-    title: '投稿の深掘り',
-    description: '@hAru_mAki_ch の投稿を深掘り・補足解説',
-    icon: ScrollText,
-  },
-  {
-    number: '02',
-    title: '論文の要約',
-    description: '最新AGI論文の要約・解説',
-    icon: Newspaper,
-  },
-  {
-    number: '03',
-    title: '知見の公開',
-    description: '知見を整理して公開',
-    icon: Unlock,
-  },
-  {
-    number: '04',
-    title: 'エージェント開発',
-    description: '自律エージェントスキルの開発',
-    icon: Bot,
-  },
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Activities() {
+  const { t } = useLanguage();
+
+  const activities = [
+    {
+      number: '01',
+      title: t('activities.card1Title'),
+      description: t('activities.item1'),
+      icon: ScrollText,
+    },
+    {
+      number: '02',
+      title: t('activities.card2Title'),
+      description: t('activities.item2'),
+      icon: Newspaper,
+    },
+    {
+      number: '03',
+      title: t('activities.card3Title'),
+      description: t('activities.item3'),
+      icon: Unlock,
+    },
+    {
+      number: '04',
+      title: t('activities.card4Title'),
+      description: t('activities.item4'),
+      icon: Bot,
+    },
+  ];
+
   return (
     <section id="activities" className="py-24 sm:py-32 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,10 +38,10 @@ export default function Activities() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
             <Flame className="w-3 h-3" />
-            Activities
+            {t('activities.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            活動内容
+            {t('activities.heading')}
           </h2>
         </div>
 

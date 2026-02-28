@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { FlaskConical } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -97,11 +99,11 @@ export default function Footer() {
           </div>
 
           <p className="text-xs text-red-600/60 font-mono">
-            朱の守護者 — 結界と祭儀を司る
+            {t('footer.guardian')}
           </p>
 
           <p className="text-xs text-white/20">
-            Experimental Project
+            {t('footer.experimental')}
           </p>
         </div>
       </div>

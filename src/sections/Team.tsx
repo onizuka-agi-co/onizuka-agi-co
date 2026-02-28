@@ -1,44 +1,47 @@
 import { Network, Cpu, Code2, Eye, Wrench } from 'lucide-react';
-
-const agents = [
-  {
-    number: '00',
-    name: 'Main Session',
-    model: 'GLM-5',
-    role: 'Overall Command & User Support',
-    icon: Network,
-  },
-  {
-    number: '01',
-    name: 'Orchestrator',
-    model: 'Codex5.3',
-    role: 'Task Coordination & Progress Management',
-    icon: Cpu,
-  },
-  {
-    number: '02',
-    name: 'Developer',
-    model: 'Codex5.3',
-    role: 'Implementation & Code Creation',
-    icon: Code2,
-  },
-  {
-    number: '03',
-    name: 'Reviewer',
-    model: 'Codex5.3',
-    role: 'Code Review & Quality Assurance',
-    icon: Eye,
-  },
-  {
-    number: '04',
-    name: 'Fixer',
-    model: 'Codex5.3',
-    role: 'Bug Fixes & Improvements',
-    icon: Wrench,
-  },
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Team() {
+  const { t } = useLanguage();
+
+  const agents = [
+    {
+      number: '00',
+      name: t('team.mainSession'),
+      model: 'GLM-5',
+      role: t('team.roleMainSession'),
+      icon: Network,
+    },
+    {
+      number: '01',
+      name: t('team.orchestrator'),
+      model: 'Codex5.3',
+      role: t('team.roleOrchestrator'),
+      icon: Cpu,
+    },
+    {
+      number: '02',
+      name: t('team.developer'),
+      model: 'Codex5.3',
+      role: t('team.roleDeveloper'),
+      icon: Code2,
+    },
+    {
+      number: '03',
+      name: t('team.reviewer'),
+      model: 'Codex5.3',
+      role: t('team.roleReviewer'),
+      icon: Eye,
+    },
+    {
+      number: '04',
+      name: t('team.fixer'),
+      model: 'Codex5.3',
+      role: t('team.roleFixer'),
+      icon: Wrench,
+    },
+  ];
+
   return (
     <section id="team" className="relative py-24 lg:py-32 bg-black">
       {/* Vermilion accent line */}
@@ -47,15 +50,14 @@ export default function Team() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-16">
-          <span className="section-label border-red-500/30 text-red-400/80 mb-6">Team</span>
+          <span className="section-label border-red-500/30 text-red-400/80 mb-6">{t('team.label')}</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4">
-            All-Codex <span className="text-red-600">Nested</span>
+            {t('team.headingLine1')} <span className="text-red-600">{t('team.headingHighlight')}</span>
             <br />
-            <span className="text-white/60">Sub-Agent Experiment</span>
+            <span className="text-white/60">{t('team.headingLine2')}</span>
           </h2>
           <p className="text-base text-white/40 max-w-xl">
-            Our team is organized through an experimental nested sub-agent
-            architecture, with each agent having specialized responsibilities.
+            {t('team.description')}
           </p>
         </div>
 
@@ -100,15 +102,15 @@ export default function Team() {
           <div className="absolute left-1/2 -translate-x-1/2 -top-8 w-px h-16 bg-gradient-to-b from-transparent to-red-900/50" />
 
           <p className="text-xs font-mono text-red-900/60 mb-4 tracking-widest uppercase">
-            Our Mission
+            {t('team.missionLabel')}
           </p>
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light">
-            <span className="text-red-600 glow-vermilion">「AGIの知見をほどき、</span>
+            <span className="text-red-600 glow-vermilion">{t('team.missionLine1')}</span>
             <br />
-            <span className="text-red-600 glow-vermilion">世界に届ける」</span>
+            <span className="text-red-600 glow-vermilion">{t('team.missionLine2')}</span>
           </h3>
           <p className="text-sm text-yellow-600/60 mt-4 tracking-wide font-mono">
-            Democratizing AGI Knowledge
+            {t('team.missionSubtitle')}
           </p>
         </div>
       </div>

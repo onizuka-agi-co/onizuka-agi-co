@@ -1,45 +1,48 @@
 import { Github, Twitter, Mail, ArrowRight, ExternalLink } from 'lucide-react';
-
-const contactLinks = [
-  {
-    name: 'GitHub',
-    handle: 'onizuka-agi-co',
-    href: 'https://github.com/onizuka-agi-co',
-    icon: Github,
-  },
-  {
-    name: 'X (Twitter)',
-    handle: '@hAru_mAki_ch',
-    href: 'https://x.com/hAru_mAki_ch',
-    icon: Twitter,
-  },
-  {
-    name: 'Email',
-    handle: 'onizuka.renjiii+onizuka-agi@gmail.com',
-    href: 'mailto:onizuka.renjiii+onizuka-agi@gmail.com',
-    icon: Mail,
-  },
-];
-
-const positions = [
-  {
-    title: 'Founding Engineer',
-    location: 'Remote',
-    type: 'Full-time',
-  },
-  {
-    title: 'AI Researcher',
-    location: 'Remote',
-    type: 'Full-time',
-  },
-  {
-    title: 'Open Application',
-    location: 'Remote',
-    type: 'Flexible',
-  },
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
+
+  const contactLinks = [
+    {
+      name: t('contact.github'),
+      handle: 'onizuka-agi-co',
+      href: 'https://github.com/onizuka-agi-co',
+      icon: Github,
+    },
+    {
+      name: t('contact.twitter'),
+      handle: '@hAru_mAki_ch',
+      href: 'https://x.com/hAru_mAki_ch',
+      icon: Twitter,
+    },
+    {
+      name: t('contact.email'),
+      handle: 'onizuka.renjiii+onizuka-agi@gmail.com',
+      href: 'mailto:onizuka.renjiii+onizuka-agi@gmail.com',
+      icon: Mail,
+    },
+  ];
+
+  const positions = [
+    {
+      title: t('contact.position1Title'),
+      location: t('contact.locationRemote'),
+      type: t('contact.typeFullTime'),
+    },
+    {
+      title: t('contact.position2Title'),
+      location: t('contact.locationRemote'),
+      type: t('contact.typeFullTime'),
+    },
+    {
+      title: t('contact.position3Title'),
+      location: t('contact.locationRemote'),
+      type: t('contact.typeFlexible'),
+    },
+  ];
+
   return (
     <section id="contact" className="relative py-24 lg:py-32 bg-black">
       {/* Vermilion accent line */}
@@ -49,13 +52,12 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left Column - Contact Info */}
           <div>
-            <span className="section-label border-red-500/30 text-red-400/80 mb-6">Contact</span>
+            <span className="section-label border-red-500/30 text-red-400/80 mb-6">{t('contact.label')}</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-6">
-              Get In <span className="text-red-600">Touch</span>
+              {t('contact.titlePrefix')} <span className="text-red-600">{t('contact.titleHighlight')}</span>
             </h2>
             <p className="text-base text-white/40 mb-10 max-w-md">
-              Have questions about our project? Want to collaborate? Reach out to
-              us through any of these channels.
+              {t('contact.leftDescription')}
             </p>
 
             {/* Contact Links */}
@@ -81,13 +83,12 @@ export default function Contact() {
 
           {/* Right Column - Open Positions */}
           <div>
-            <span className="section-label border-red-500/30 text-red-400/80 mb-6">Join Us</span>
+            <span className="section-label border-red-500/30 text-red-400/80 mb-6">{t('contact.joinLabel')}</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-6">
-              We&apos;re <span className="text-red-600">Hiring</span>
+              {t('contact.hiringPrefix')} <span className="text-red-600">{t('contact.hiringHighlight')}</span>
             </h2>
             <p className="text-base text-white/40 mb-10 max-w-md">
-              ONIZUKA AGI Co. is looking for exceptional researchers and engineers
-              to build the future of autonomous AI.
+              {t('contact.hiringDescription')}
             </p>
 
             {/* Position List */}
@@ -112,14 +113,14 @@ export default function Contact() {
 
             {/* Task Management Link */}
             <div className="mt-8 p-4 bg-red-950/10 border border-red-900/20">
-              <p className="text-xs text-white/40 mb-2">Task Management</p>
+              <p className="text-xs text-white/40 mb-2">{t('contact.taskManagement')}</p>
               <a
                 href="https://github.com/orgs/onizuka-agi-co/projects/1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-white hover:text-red-500 transition-colors"
               >
-                View GitHub Project
+                {t('contact.viewProject')}
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
