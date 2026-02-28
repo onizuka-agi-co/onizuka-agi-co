@@ -1,17 +1,30 @@
 import { Network, Cpu, Code2, Eye, Wrench, Cat, ClipboardList, Crown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+type TeamMember = {
+  number: string;
+  name: string;
+  role: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  avatarSrc?: string;
+  avatarAlt?: string;
+  avatarEmoji?: string;
+};
+
 export default function Team() {
   const { t } = useLanguage();
 
   // Team Members (3 people)
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     {
       number: '00',
       name: t('team.renji'),
       role: t('team.roleRenji'),
       description: t('team.memberDescRenji'),
       icon: Crown,
+      avatarSrc: '/favicon.svg',
+      avatarAlt: 'ONIZUKA logo',
     },
     {
       number: '01',
@@ -19,6 +32,7 @@ export default function Team() {
       role: t('team.roleTuzuri'),
       description: t('team.memberDescTuzuri'),
       icon: Cat,
+      avatarEmoji: '🐱',
     },
     {
       number: '02',
@@ -26,6 +40,7 @@ export default function Team() {
       role: t('team.roleAkari'),
       description: t('team.memberDescAkari'),
       icon: ClipboardList,
+      avatarEmoji: '🔔',
     },
   ];
 
@@ -101,6 +116,23 @@ export default function Team() {
                 key={member.number}
                 className="bg-black p-8 hover:bg-red-950/10 transition-colors group border border-red-900/10 hover:border-red-500/30"
               >
+                {/* Avatar */}
+                <div className="mb-5">
+                  <div className="w-16 h-16 rounded-full border border-red-500/30 bg-red-950/20 flex items-center justify-center overflow-hidden">
+                    {member.avatarSrc ? (
+                      <img
+                        src={member.avatarSrc}
+                        alt={member.avatarAlt ?? member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-2xl leading-none" aria-hidden="true">
+                        {member.avatarEmoji}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
                 {/* Icon */}
                 <div className="mb-6">
                   <member.icon className="w-8 h-8 text-red-900/40 group-hover:text-red-500 transition-colors" />
