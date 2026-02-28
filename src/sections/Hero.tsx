@@ -81,14 +81,14 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${heroBgUrl})`,
-          opacity: 0.3,
+          opacity: 0.5,
         }}
       />
 
       {/* Gradient overlay - more transparent */}
       <div
         className="absolute inset-0 w-full h-full"
-        style={{ background: 'linear-gradient(180deg, rgba(26,5,5,0.7) 0%, rgba(0,0,0,0.8) 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(26,5,5,0.5) 0%, rgba(0,0,0,0.6) 100%)' }}
       />
 
       {/* Canvas Background - transparent */}
@@ -103,7 +103,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at 20% 30%, rgba(185, 28, 28, 0.4) 0%, transparent 50%)',
+            'radial-gradient(ellipse at 20% 30%, rgba(185, 28, 28, 0.2) 0%, transparent 50%)',
         }}
       />
 
