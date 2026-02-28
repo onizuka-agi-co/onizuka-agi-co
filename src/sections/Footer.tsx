@@ -83,7 +83,7 @@ export default function Footer() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex items-center gap-3">
             <img
-              src="/favicon.svg"
+              src="./favicon.svg"
               alt="ONIZUKA logo"
               className="w-8 h-8"
             />

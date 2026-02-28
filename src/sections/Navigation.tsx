@@ -20,7 +20,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <img
-              src="/favicon.svg"
+              src="./favicon.svg"
               alt="ONIZUKA logo"
               className="w-5 h-5 group-hover:opacity-90 transition-opacity"
             />
