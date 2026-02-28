@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 // Import hero background image
-const heroBgUrl = new URL('../../public/hero-bg.png', import.meta.url).href;
+import heroBgUrl from '../../public/hero-bg.png';
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
