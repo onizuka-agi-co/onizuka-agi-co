@@ -10,6 +10,10 @@
 
   [![Status](https://img.shields.io/badge/Status-Beta-yellow)](https://github.com/onizuka-agi-co)
   [![Automation](https://img.shields.io/badge/Automation-Semi--Automatic-orange)](https://github.com/onizuka-agi-co)
+
+  <a href="https://orynth.dev/projects/onizuka-agi-co" target="_blank" rel="noopener">
+    <img src="https://orynth.dev/api/badge/onizuka-agi-co?theme=light&style=minimal" alt="Featured on Orynth" width="152" height="48" />
+  </a>
 </div>
 
 ## 🎯 About
@@ -59,6 +63,17 @@ We develop and publish AgentSkills for AI agents.
 - **daily-memory** - Daily report and memory management
 
 See the [skills](https://github.com/onizuka-agi-co/skills) repository for details.
+
+## 📊 Repositories
+
+| Repository | Description |
+|------------|-------------|
+| [skills](https://github.com/onizuka-agi-co/skills) | OpenClaw Skills for ONIZUKA AGI Co. |
+| [secretary-bot](https://github.com/onizuka-agi-co/secretary-bot) | 🎋 AKARI - YAML-based Discord Secretary Bot |
+| [memory](https://github.com/onizuka-agi-co/memory) | Daily reports & memory - VitePress powered |
+| [workspace](https://github.com/onizuka-agi-co/workspace) | OpenClaw Workspace |
+| [github-app-worker](https://github.com/onizuka-agi-co/github-app-worker) | GitHub App integration worker |
+| [zenn-article](https://github.com/onizuka-agi-co/zenn-article) | Zenn article drafts |
 
 ## 📫 Contact
 

@@ -10,6 +10,10 @@
 
   [![Status](https://img.shields.io/badge/Status-Beta-yellow)](https://github.com/onizuka-agi-co)
   [![Automation](https://img.shields.io/badge/Automation-Semi--Automatic-orange)](https://github.com/onizuka-agi-co)
+
+  <a href="https://orynth.dev/projects/onizuka-agi-co" target="_blank" rel="noopener">
+    <img src="https://orynth.dev/api/badge/onizuka-agi-co?theme=light&style=minimal" alt="Featured on Orynth" width="152" height="48" />
+  </a>
 </div>
 
 ## 🎯 About
@@ -59,6 +63,17 @@ AIエージェント向けの AgentSkills を開発・公開しています。
 - **daily-memory** - 日報・メモリ管理
 
 詳細は [skills](https://github.com/onizuka-agi-co/skills) リポジトリをご覧ください。
+
+## 📊 Repositories
+
+| リポジトリ | 説明 |
+|-----------|------|
+| [skills](https://github.com/onizuka-agi-co/skills) | OpenClaw Skills for ONIZUKA AGI Co. |
+| [secretary-bot](https://github.com/onizuka-agi-co/secretary-bot) | 🎋 AKARI - YAMLベースのDiscord秘書ボット |
+| [memory](https://github.com/onizuka-agi-co/memory) | 日報・メモリ管理 - VitePress |
+| [workspace](https://github.com/onizuka-agi-co/workspace) | OpenClaw Workspace |
+| [github-app-worker](https://github.com/onizuka-agi-co/github-app-worker) | GitHub App連携ワーカー |
+| [zenn-article](https://github.com/onizuka-agi-co/zenn-article) | Zenn記事の下書き |
 
 ## 📫 Contact
 
