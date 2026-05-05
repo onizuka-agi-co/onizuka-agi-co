@@ -4,6 +4,7 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Features from './sections/Features';
 import Visual from './sections/Visual';
+import Dashboard from './sections/Dashboard';
 import Team from './sections/Team';
 import TeamStructure from './sections/TeamStructure';
 import Contact from './sections/Contact';
@@ -28,6 +29,7 @@ function App() {
         <About />
         <Features />
         <Visual />
+        <Dashboard />
         <Team />
         <TeamStructure />
         <Contact />
