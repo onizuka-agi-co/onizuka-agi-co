@@ -8,6 +8,7 @@ import {
 import {
   Database, FileText, TrendingUp, Activity, BookOpen, Zap
 } from 'lucide-react';
+import KnowledgeSearch from './dashboard/KnowledgeSearch';
 
 interface StatCardProps {
   title: string;
@@ -112,6 +113,7 @@ export default function Dashboard() {
             <TabsTrigger value="overview" className="data-[state=active]:bg-[#C41E3A]">Overview</TabsTrigger>
             <TabsTrigger value="pipeline" className="data-[state=active]:bg-[#C41E3A]">Pipeline</TabsTrigger>
             <TabsTrigger value="trends" className="data-[state=active]:bg-[#C41E3A]">Trends</TabsTrigger>
+            <TabsTrigger value="search" className="data-[state=active]:bg-[#C41E3A]">🔍 Search</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview">
@@ -236,6 +238,10 @@ export default function Dashboard() {
                 </div>
               </CardContent>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="search">
+            <KnowledgeSearch />
           </TabsContent>
         </Tabs>
 
