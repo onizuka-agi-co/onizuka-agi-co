@@ -6,7 +6,7 @@ import {
   PieChart, Pie, Cell, AreaChart, Area
 } from 'recharts';
 import {
-  Database, FileText, TrendingUp, Activity, BookOpen, Zap
+  Database, Activity, BookOpen, Zap
 } from 'lucide-react';
 import KnowledgeSearch from './dashboard/KnowledgeSearch';
 

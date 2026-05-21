@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { searchKnowledge, type SearchResponse } from '../../lib/knowledgeApi';
-import { Search, Loader2, FileText, BookOpen, MessageSquare, ExternalLink } from 'lucide-react';
+import { Search, Loader2, FileText, BookOpen, MessageSquare } from 'lucide-react';
 
 export default function KnowledgeSearch() {
   const [query, setQuery] = useState('');

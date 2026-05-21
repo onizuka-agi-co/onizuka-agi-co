@@ -1,0 +1,4 @@
+Contact: mailto:sunwood.ai.labs@gmail.com
+Expires: 2027-05-21T00:00:00.000Z
+Preferred-Languages: ja, en
+Canonical: https://onizuka-agi.com/.well-known/security.txt
